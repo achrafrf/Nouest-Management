@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="relative z-20 w-full max-w-[1100px] flex flex-col items-center text-center">
         
         {/* Top Minimal Badge */}
-        <div className="mb-6 flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
+        <div className="mb-6 mt-6 flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C0A062] opacity-75"></span>
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#C0A062]"></span>

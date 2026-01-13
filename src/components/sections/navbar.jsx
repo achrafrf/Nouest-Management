@@ -4,11 +4,14 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import { DarkModeToggle } from "@/components/ui/dark-mode-toggle";
+import DevisModal from "../modal/DevisModal";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
+  //for modal de devis
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -82,9 +85,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[1000] flex justify-center p-[10px_20px_0] dark:bg-[#030303] ">
-      <div className="w-full max-w-[1300px] bg-background rounded-b-[10px] flex items-center justify-between px-5 md:px-10 h-[98px] shadow-sm dark:border border-white">
-        {/* Logo */}
+    <nav className="fixed top-0 left-0 right-0 z-[1000] flex justify-center p-[7px_14px_0] dark:bg-[#030303] ">
+<div className={`w-full max-w-[1300px] flex items-center justify-between px-5 md:px-10 h-[98px] transition-all duration-300 ${
+  isMobileMenuOpen ? "bg-transparent shadow-none" : "bg-background rounded-b-[10px] shadow-sm dark:border border-white"
+}`}>
+          {/* Logo */}
         <a href="/" className="relative block w-[126px] h-[100px] shrink-0">
           <Image
             src="/image.png"
@@ -160,36 +165,37 @@ const Navbar = () => {
           <div className="flex flex-col items-end">
             <span className="text-[12px] font-medium text-muted-foreground uppercase tracking-wider">Interested?</span>
           </div>
-          <a
-            href="/contact-us"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="group relative flex items-center justify-center gap-2 bg-primary hover:bg-foreground text-primary-foreground hover:text-background px-8 h-[58px] rounded-full text-[16px] font-semibold transition-all duration-300"
           >
-            Contactez-nous
+              Demander un devis
             <div className="relative w-5 h-5 flex items-center justify-center overflow-hidden">
                <ArrowUpRight className="w-5 h-5 absolute transition-all duration-300 group-hover:-translate-y-5 group-hover:translate-x-5" />
                <ArrowUpRight className="w-5 h-5 absolute -translate-x-5 translate-y-5 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
             </div>
-          </a>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <div className="flex items-center gap-4 lg:hidden">
-          <DarkModeToggle />
-          <button
-            className="p-2 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
+
+        {/* Mobile Menu Toggle - زدت هنا الـ Z-index باش الـ X تبقى ديما الفوق */}
+<div className="flex items-center gap-4 lg:hidden relative z-[1010]">
+  <DarkModeToggle />
+  <button
+    className="p-2 text-foreground transition-transform active:scale-90"
+    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+  >
+    {/* بدلت لون الـ X للبوردو باش تبان واضحة بزاف */}
+    {isMobileMenuOpen ? <X className="w-8 h-8 text-[#800020]" /> : <Menu className="w-8 h-8" />}
+  </button>
+</div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed inset-0 bg-background z-[999] lg:hidden transition-transform duration-300 ease-in-out ${
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
+<div
+  className={`fixed inset-0 bg-background/95 backdrop-blur-md z-[1000] lg:hidden transition-transform duration-500 ease-in-out ${
+    isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+  }`}
+>
         <div className="flex flex-col h-full pt-24 pb-10 px-6 sm:px-10">
           <div className="flex flex-col gap-4 overflow-y-auto">
             {menuItems.map((item) => (
@@ -247,6 +253,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+        <DevisModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </nav>
   );
 };

@@ -52,7 +52,7 @@ export default function ValuesBlack() {
           </div>
           
           <h2 className="text-white text-[28px] sm:text-[38px] lg:text-[46px] font-black leading-tight tracking-tighter uppercase italic mb-6">
-            Votre confort est <span className="text-[#C0A062] not-italic">notre responsabilité</span>
+            Votre confort est <span className="text-[#C0A062] not-italic"> notre responsabilité</span>
           </h2>
           
           <p className="max-w-[600px] text-gray-400 text-[14px] sm:text-[16px] leading-relaxed font-light opacity-80">
