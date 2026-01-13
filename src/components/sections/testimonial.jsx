@@ -8,16 +8,29 @@ const TestimonialSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-center">
           {/* Left Column: Content */}
           <div className="flex flex-col">
-            <div className="mb-8 sm:mb-10 text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-medium leading-[1.2] tracking-[-0.01em] text-foreground italic">
-              &quot;Ironis has completely elevated our manufacturing process. Their precision, craftsmanship, and reliability have helped us meet even the toughest project demands. We trust them with every custom part, every weld, every time.&quot;
+            <div className="mb-8 sm:mb-10 text-[14px] sm:text-[22px] md:text-[20px] lg:text-[28px] font-medium leading-[1.2] tracking-[-0.01em] text-foreground italic">
+              &quot;Nouest Management est le fruit de, non
+seulement des mois de travail, mais aussi d'une
+profonde réflexion sur les nouvelles méthodes
+de management des prestations de mise à
+disposition des ressources humaines au profit
+des entreprises et organisations clientes. Dans
+le cadre de l'innovation, j'ai créé cette société
+pour subvenir aux besoins croissants exprimés
+dans ce domaine.
+la rigueur, la qualité du service, le suivi du
+travail étaient les piliers de ma vision lors de la
+création de cette entreprise.&quot;
             </div>
             
             <div className="mb-10 sm:mb-12">
               <div className="text-[18px] font-semibold text-foreground">
-                Michael R.
+                CHAKIK Rim
               </div>
               <div className="text-[16px] text-muted-foreground">
-                Materials Coordinator
+                ingénieur lauréate de
+l’école Nationale Supérieure des
+Mines de Rabat.
               </div>
             </div>
 

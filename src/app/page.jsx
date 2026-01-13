@@ -17,11 +17,11 @@ export default function Home() {
         <Hero />
         <ServiceCards />
         <AboutUsSection />
-        <ProjectsList />
+        {/* <ProjectsList /> */}
         <StatsSection />
-        <TestimonialSection />
+        {/* <TestimonialSection /> */}
         <ValuesBlack />
-        <CtaYellow />
+        {/* <CtaYellow /> */}
       </main>
       <Footer />
     </div>

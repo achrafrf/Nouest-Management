@@ -1,18 +1,26 @@
 import './globals.css';
 import { ReactNode } from 'react';
-import Script from 'next/script';
+import { ThemeProvider } from "@/components/theme-provider";
+
+// بدل هاد المعلومات باش تولي ديال الشركة الحقيقية
+export const metadata = {
+  title: "Nouest Management | Excellence des Services Généraux",
+  description: "Nouest Management : Votre partenaire expert en Gardiennage, Nettoyage et Jardinage au Maroc.",
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <Script
-          id="orchids-browser-logs"
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
-          strategy="afterInteractive"
-          data-orchids-project-id="c8097953-7986-41c8-954c-071588461203"
-        />
-        {children}
+    <html lang="fr" suppressHydrationWarning>
+      <body className="antialiased font-sans">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light" // خليه ديما Light حيت اللوغو والألوان صاوبناهم على البيض
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {/* حيدنا كاع الـ Scripts ديال Orchids و Messenger و ErrorReporter */}
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

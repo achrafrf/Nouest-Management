@@ -1,119 +1,104 @@
 import React from 'react';
 import Image from 'next/image';
+import { ArrowUpRight, CheckCircle2, Award } from 'lucide-react';
 
-/**
- * AboutUsSection Component
- * 
- * A pixel-perfect clone of the "About us" section featuring:
- * - A 2-column header layout with a brand subtitle and primary CTA.
- * - Large industrial-style typography for the main heading and body description.
- * - A details grid with numbered value points (Steel Frames, Architectural Metalwork, etc.).
- * - A large featured image of industrial metalworking.
- */
-const AboutUsSection = () => {
+const AboutSection = () => {
   return (
-    <section className="py-16 sm:py-24 lg:py-32 bg-muted/30 overflow-hidden">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
-        {/* Top Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-12 sm:mb-[60px] gap-12 lg:gap-0">
-          {/* Left Side: Brand Indicator & Desktop Button */}
-          <div className="flex flex-col gap-8 lg:w-[25%] h-full justify-between">
-            <div className="flex items-center gap-2">
-              <img 
-                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688c88b9fa8c1caa83be789b_Subtitle_20icon_20Black-7.svg" 
-                alt="About us icon" 
-                className="w-4 h-4 dark:invert"
-              />
-              <span className="text-[14px] font-semibold uppercase tracking-wider text-foreground">About us</span>
-            </div>
-            
-            {/* Desktop Only 'About Company' Button */}
-            <div className="hidden lg:block">
-              <a 
-                href="/about-us" 
-                className="group relative inline-flex items-center justify-between bg-primary text-primary-foreground font-semibold text-[16px] px-8 py-4 rounded-full min-w-[220px] transition-all duration-300 hover:bg-foreground hover:text-background"
-              >
-                <span>About Company</span>
-                <div className="relative w-5 h-5 overflow-hidden flex items-center justify-center">
-                  <img 
-                    src="https://cdn.prod.website-files.com/688b105b2269d2924df670a4/688b32a64d16109629c8c8d0_Button%20Arrow.svg" 
-                    alt="Arrow" 
-                    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-8"
-                  />
-                  <img 
-                    src="https://cdn.prod.website-files.com/688b105b2269d2924df670a4/688b3461a12b76a2afb251ff_Arrow%20Botton%202%20Yellow.svg" 
-                    alt="Arrow hover" 
-                    className="absolute w-4 h-4 -translate-x-8 transition-transform duration-300 group-hover:translate-x-0"
-                  />
-                </div>
-              </a>
-            </div>
+    <section className="py-16 sm:py-24 bg-white overflow-hidden font-sans">
+      <div className="max-w-[1200px] mx-auto px-6">
+        
+        {/* Top Header - Very Clean & Compact */}
+         <div className="flex flex-col items-center mb-16 text-center">
+          <div className="mb-4 flex items-center gap-3 px-5 py-2 rounded-full border border-[#800020]/20 bg-[#800020]/5 shadow-sm">
+            <span className="flex h-2 w-2 rounded-full bg-[#800020] animate-pulse" />
+            <span className="text-[11px] font-black tracking-[0.3em] text-[#800020] uppercase">
+              Qui Sommes Nous?
+            </span>
           </div>
-
-          {/* Right Side: Large Heading & Paragraph */}
-          <div className="lg:w-[70%]">
-            <h2 className="text-[32px] sm:text-[40px] md:text-[56px] font-medium leading-[1.2] text-foreground mb-8 tracking-tight">
-              We specialize in high-quality <span className="text-foreground font-semibold">metal fabrication, strength and efficiency</span>. From individual parts to complex structures.
-            </h2>
-            <p className="text-[16px] sm:text-[18px] text-muted-foreground leading-[1.6] max-w-[720px]">
-              Specializing in metal fabrication, custom components, and industrial builds, we bring together experience, precision, and hands-on craftsmanship.
-            </p>
-          </div>
+          <h2 className="text-[#1a1a1a] text-2xl sm:text-4xl font-black tracking-tighter uppercase italic">
+            Votre confort est <span className="text-[#C0A062] not-italic">notre responsabilité</span>
+          </h2>
         </div>
 
-        {/* Feature Image & Value Numbers Section */}
-        <div className="flex flex-col lg:flex-row items-stretch gap-10">
-          {/* Numbered Values (Pills) */}
-          <div className="lg:w-[25%] flex flex-col gap-4 justify-center">
-            {[
-              { id: 1, text: "Steel Frames" },
-              { id: 2, text: "Architectural Metalwork" },
-              { id: 3, text: "Precision Prototypes" }
-            ].map((item) => (
-              <div 
-                key={item.id} 
-                className="flex items-center bg-background rounded-full p-2 pr-6 shadow-sm border border-border hover:shadow-md transition-shadow duration-300 group"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-[18px] font-medium text-primary-foreground mr-4 group-hover:scale-110 transition-transform duration-300">
-                  {item.id}
-                </div>
-                <span className="text-[16px] font-medium text-foreground">{item.text}</span>
+        {/* Main Content Grid */}
+        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
+          
+          {/* Left Column: Focused Text (Small & Pro) */}
+          <div className="w-full lg:w-[45%] order-2 lg:order-1">
+            <div className="space-y-6">
+              <p className="text-[35px] sm:text-[26px] text-black leading-relaxed font-light">
+                <span className="font-bold text-[#800020]">Nouest Management</span> est le fruit d’une profonde réflexion sur les nouvelles méthodes de management des prestations de mise à disposition des ressources humaines. 
+              </p>
+              
+              <p className="text-[25px] text-gray-500 leading-relaxed border-l-2 border-[#C0A062]/30 pl-6 italic">
+                "La rigueur, la qualité du service et le suivi du travail étaient les piliers de ma vision lors de la création de cette entreprise."
+                <span className="block mt-2 font-bold text-[#1a1a1a] not-italic text-[13px] uppercase tracking-wider">— CHAKIK Rim, Fondatrice</span>
+              </p>
+
+              {/* Compact Values Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+                {[
+                  "Expertise du métier",
+                  "Qualité du service",
+                  "Innovation & Créativité",
+                  "Disponibilité & Écoute"
+                ].map((val, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="text-[#C0A062]" />
+                    <span className="text-[13px] font-bold text-[#1a1a1a] uppercase tracking-tight">{val}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          {/* Featured Industrial Image */}
-          <div className="lg:w-[75%] relative h-[250px] sm:h-[400px] md:h-[450px]">
-            <Image
-              src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/images/688cb1fe806ddae7e1da0d5e_Metal_20Photo-4.webp"
-              alt="Industrial metalworking sparks"
-              fill
-              className="object-cover rounded-[15px]"
-              sizes="(max-width: 1024px) 100vw, 75vw"
-              priority
-            />
-          </div>
-        </div>
-
-        {/* Mobile Only Button */}
-        <div className="mt-12 flex justify-center lg:hidden">
-          <a 
-            href="/about-us" 
-            className="group relative inline-flex items-center justify-between bg-primary text-primary-foreground font-semibold text-[16px] px-8 py-4 rounded-full min-w-[220px]"
-          >
-            <span>About Company</span>
-            <div className="relative w-5 h-5 overflow-hidden flex items-center justify-center ml-2">
-              <img 
-                src="https://cdn.prod.website-files.com/688b105b2269d2924df670a4/688b32a64d16109629c8c8d0_Button%20Arrow.svg" 
-                alt="Arrow" 
-                className="w-4 h-4"
-              />
+              {/* Small Sleek CTA */}
+              <div className="pt-8">
+                <a href="/contact" className="inline-flex items-center gap-4 group">
+                  <span className="text-[12px] font-black uppercase tracking-[0.2em] text-[#1a1a1a] border-b-2 border-[#800020] pb-1 group-hover:text-[#800020] transition-colors">
+                    Contactez la fondatrice
+                  </span>
+                  <div className="w-8 h-8 rounded-full bg-[#1a1a1a] flex items-center justify-center group-hover:bg-[#800020] transition-all group-hover:translate-x-1">
+                    <ArrowUpRight size={14} className="text-white" />
+                  </div>
+                </a>
+              </div>
             </div>
-          </a>
+          </div>
+
+          {/* Right Column: LARGE FEATURED IMAGE */}
+          <div className="w-full lg:w-[55%] order-1 lg:order-2">
+            <div className="relative h-[500px] md:h-[650px] w-full group">
+              {/* Background Decor Element */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#C0A062]/10 rounded-full blur-2xl group-hover:bg-[#C0A062]/20 transition-all" />
+              
+              <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl border-[8px] border-white">
+                <Image
+                  src="/pic.jpg" 
+                  alt="Founder Portrait"
+                  fill
+                  className="object-cover transition-transform duration-[2s] group-hover:scale-105"
+                />
+                
+                {/* Floating Credibility Card (The "Mines de Rabat" Badge) */}
+                <div className="absolute bottom-6 left-6 right-6 p-5 bg-white/80 backdrop-blur-lg rounded-3xl border border-white/50 shadow-xl flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[#800020] flex items-center justify-center shrink-0">
+                    <Award className="text-white w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-[14px] font-black text-[#1a1a1a] uppercase leading-none">Ingénieur Lauréate</h4>
+                    <p className="text-[11px] text-gray-600 mt-1 font-medium tracking-tight">École Nationale Supérieure des Mines de Rabat</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Visual Accent */}
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#800020]/5 rounded-full blur-3xl -z-10" />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
   );
 };
 
-export default AboutUsSection;
+export default AboutSection;

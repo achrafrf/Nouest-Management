@@ -2,148 +2,142 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Linkedin, MoveRight } from 'lucide-react';
+import { MoveRight, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react';
 
 /**
- * Footer Component
- * 
- * Replicates the footer of the Ironis website with pixel-perfect accuracy.
- * Features:
- * - Link groups for Services and Company
- * - Contact and Social links
- * - Branding & Newsletter subscription
- * - Bottom global meta links (Copyright, Licensing, Credits)
- * 
- * Theme: Light
+ * Footer Component - Nouest Management
+ * Designed & Developed by: Achraf Rafiq
+ * Style: Modern 2026 Minimalist
  */
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="w-full bg-muted/30 pt-16 sm:pt-24 lg:pt-32 pb-10 font-sans text-foreground">
-      <div className="container max-w-[1280px] mx-auto px-4 sm:px-8">
+    <footer className="w-full bg-white pt-20 sm:pt-28 pb-10 font-sans text-[#1a1a1a] border-t border-gray-100 dark:bg-[#030303]">
+      <div className="container max-w-[1280px] mx-auto px-6 sm:px-8">
+        
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-8 pb-12 sm:pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-16 lg:gap-x-12 pb-16">
           
-          {/* Left Columns - Navigation Links */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-8">
-            {/* Services Links */}
-            <div>
-              <h6 className="text-[14px] font-bold uppercase tracking-wider mb-6 sm:mb-8 text-foreground">Services</h6>
-              <ul className="space-y-3 sm:space-y-4">
-                <li>
-                  <a href="/services/sheet-metal-work" className="text-[15px] sm:text-[16px] text-muted-foreground hover:text-foreground transition-colors duration-300">
-                    Sheet Metal Work
-                  </a>
-                </li>
-                <li>
-                  <a href="/services/architectural-elements" className="text-[15px] sm:text-[16px] text-muted-foreground hover:text-foreground transition-colors duration-300">
-                    Architectural Elements
-                  </a>
-                </li>
-                <li>
-                  <a href="/services/machinery-components" className="text-[15px] sm:text-[16px] text-muted-foreground hover:text-foreground transition-colors duration-300">
-                    Machinery Components
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Company Links */}
-            <div>
-              <h6 className="text-[14px] font-bold uppercase tracking-wider mb-6 sm:mb-8 text-foreground">Company</h6>
-              <ul className="space-y-3 sm:space-y-4">
-                <li>
-                  <a href="/about-us" className="text-[15px] sm:text-[16px] text-muted-foreground hover:text-foreground transition-colors duration-300">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="/pricing" className="text-[15px] sm:text-[16px] text-muted-foreground hover:text-foreground transition-colors duration-300">
-                    Pricing
-                  </a>
-                </li>
-                <li>
-                  <a href="/our-team" className="text-[15px] sm:text-[16px] text-muted-foreground hover:text-foreground transition-colors duration-300">
-                    Team
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact Information (Below Company/Services on Mobile) */}
-            <div className="col-span-2 pt-4 sm:pt-8">
-              <h6 className="text-[14px] font-bold uppercase tracking-wider mb-6 sm:mb-8 text-foreground">Contact us</h6>
-              <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-x-12">
-                <a 
-                  href="mailto:ironis@example.com" 
-                  className="text-[16px] sm:text-[18px] font-medium text-foreground hover:opacity-70 transition-opacity"
-                >
-                  ironis@example.com
-                </a>
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="flex items-center gap-2 text-[16px] sm:text-[18px] font-medium text-foreground hover:opacity-70 transition-opacity"
-                >
-                  <Linkedin className="w-5 h-5 fill-current" />
-                  LinkedIn
-                </a>
+          {/* 1. Brand & Newsletter Section (Left) */}
+          <div className="lg:col-span-7 flex flex-col items-start">
+            {/* Logo & Name */}
+            <div className="mb-10 flex items-center gap-4 group cursor-pointer">
+              <div className="relative w-[60px] h-[60px] overflow-hidden rounded-xl border border-gray-100 p-2 group-hover:border-[#800020]/20 transition-all">
+                <Image 
+                  src="/logo.png" 
+                  alt="Nouest Management Logo"
+                  fill
+                  className="object-contain p-1"
+                />
               </div>
-            </div>
-          </div>
-
-          {/* Right Column - Brand & Subscription */}
-          <div className="lg:col-span-8 flex flex-col items-start lg:pl-20">
-            {/* Logo */}
-            <div className="mb-8 sm:mb-10">
-              <Image 
-                src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688b757065f51cfc4af0299a_Logo_20Dark_20Ironis-1.svg" 
-                alt="Ironis Logo" 
-                width={126} 
-                height={30} 
-                className="block h-[30px] w-auto dark:invert"
-              />
+              <h2 className="text-2xl font-black tracking-tighter text-[#800020] uppercase italic">
+                Nouest <span className="text-[#C0A062] not-italic">Management</span>
+              </h2>
             </div>
 
-            {/* Newsletter Heading */}
-            <h2 className="text-[28px] sm:text-[40px] md:text-[56px] leading-[1.1] font-medium text-foreground max-w-[600px] mb-8 sm:mb-12">
-              Subscribe to be in touch with latest updates.
-            </h2>
+            {/* Newsletter Heading from context */}
+            <h3 className="text-[32px] sm:text-[45px] leading-[1.1] font-black text-[#1a1a1a] max-w-[550px] mb-10 tracking-tighter uppercase italic dark:text-white">
+              Restez connecté avec <span className="text-[#C0A062] not-italic underline decoration-1 underline-offset-8">nos dernières solutions.</span>
+            </h3>
 
-            {/* Subscription Form */}
-            <form className="w-full max-w-[500px] relative group" onSubmit={(e) => e.preventDefault()}>
+            {/* Modern Subscription Form */}
+            <form className="w-full max-w-[480px] relative group" onSubmit={(e) => e.preventDefault()}>
               <input 
-                type="email" 
-                placeholder="Email address" 
-                className="w-full py-5 sm:py-6 px-6 sm:px-8 rounded-full bg-background border border-border text-[16px] focus:outline-none focus:border-primary transition-all duration-300 placeholder:text-muted-foreground"
+                type="email"
+                placeholder="Votre adresse email"
+                className="w-full py-5 px-8 rounded-full bg-gray-50 border border-[#800020] text-[15px] focus:outline-none focus:border-[#C0A062] focus:bg-white transition-all duration-500 placeholder:text-gray-400"
                 required
               />
               <button 
                 type="submit" 
-                className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-background hover:bg-primary transition-colors duration-300"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-[46px] h-[46px] flex items-center justify-center rounded-full bg-[#1a1a1a] hover:bg-[#800020] text-white transition-all duration-300 shadow-lg group-hover:shadow-[#800020]/20"
               >
-                <MoveRight className="w-5 h-5 text-foreground" />
+                <MoveRight className="w-5 h-5" />
               </button>
             </form>
           </div>
+
+          {/* 2. Navigation & Contact (Right) */}
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-12 lg:pl-10">
+            
+            {/* Column: Nos Services (From PDF Slide 5) */}
+            <div>
+              <h6 className="text-[12px] font-black uppercase tracking-[0.3em] mb-8 text-[#C0A062]">Services</h6>
+              <ul className="space-y-4">
+                {[
+                  "Externalisation RH",
+                  "Personnel Intérimaire",
+                  "Jardinage & Espaces Verts",
+                  "Nettoyage Industriel"
+                ].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-[15px] font-bold text-gray-500 hover:text-[#800020] transition-colors flex items-center gap-2 group">
+                      <div className="w-0 h-[1px] bg-[#800020] group-hover:w-3 transition-all"></div>
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column: Contact Details (From PDF Slide 6) */}
+            <div>
+              <h6 className="text-[12px] font-black uppercase tracking-[0.3em] mb-8 text-[#C0A062]">Contact Us</h6>
+              <div className="flex flex-col gap-6">
+                <a href="mailto:nouestmanagement@gmail.com" className="group">
+                  <p className="text-[10px] uppercase font-bold text-gray-400 mb-1">Email</p>
+                  <p className="text-[15px] font-bold text-[#800020] group-hover:text-[#800020] transition-colors">nouestmanagement@gmail.com</p>
+                </a>
+                
+                <a href="tel:+212614809564" className="group">
+                  <p className="text-[10px] uppercase font-bold text-gray-400 mb-1">Téléphone</p>
+                  <p className="text-[15px] font-bold text-[#800020] group-hover:text-[#800020] transition-colors">+212 6 14 80 95 64</p>
+                </a>
+
+                <div className="group">
+                  <p className="text-[10px] uppercase font-bold text-gray-400 mb-1">Siège Social</p>
+                  <p className="text-[14px] font-bold text-gray-500 leading-tight">
+                    15 AV AL ABTAL, <br /> AGDAL, RABAT
+                  </p>
+                </div>
+
+                {/* Social Icons */}
+                <div className="flex gap-4 pt-2">
+                  {[Instagram, Linkedin, Facebook].map((Icon, i) => (
+                    <a key={i} href="#" className="w-9 h-9 rounded-full border border-[#800020] flex items-center justify-center text-gray-400 hover:bg-[#800020] hover:text-white transition-all">
+                      <Icon size={16} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Bottom Bar Divider */}
-        <div className="w-full h-px bg-border mb-8 sm:mb-10" />
+        {/* Bottom Bar: Final Credits & Sign-off */}
+        <div className="w-full h-[1px] bg-gray-50 mb-10" />
 
-        {/* Secondary Navigation / Credits */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-[14px] sm:text-[15px] text-muted-foreground gap-y-4">
-          <div className="flex items-center gap-2 text-center md:text-left">
-            <span>© Ironis. All Rights Reserved.</span>
-            <a href="/licensing" className="hover:text-foreground transition-colors">Licensing</a>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-[12px] font-bold text-gray-400">
+            <span>© {currentYear} NOUEST MANAGEMENT.</span>
+            <div className="hidden md:block w-1 h-1 rounded-full bg-gray-200"></div>
+            <a href="#" className="hover:text-[#800020] transition-colors uppercase tracking-widest">Mentions Légales</a>
           </div>
           
-          <div className="flex items-center gap-1">
-            <span>Template by</span>
-            <a href="#" className="text-foreground font-medium hover:underline">wCopilot</a>
-            <span>. Powered by</span>
-            <a href="#" className="text-foreground font-medium hover:underline">Webflow</a>
+          {/* Your Professional Signature */}
+          <div className="group">
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.2em]">
+              Designed & Developed by{" "}
+              <a 
+                href="#" 
+                className="text-[#1a1a1a] font-black group-hover:text-[#C0A062] transition-colors relative"
+              >
+                Achraf Rafiq
+                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#C0A062] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+              </a>
+            </p>
           </div>
         </div>
       </div>

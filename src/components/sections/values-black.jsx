@@ -1,98 +1,97 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
+import { Award, Headphones, Lightbulb, ChevronRight } from 'lucide-react';
 
 /**
- * ValuesBlack Section Component
- * 
- * A dark-themed values section featuring "Reliability", "Efficiency", and "Innovation".
- * It includes high-contrast yellow icons, a large geometric background graphic,
- * and a rich charcoal industrial aesthetic.
+ * ValuesBlack Section - Nouest Management 2026 Edition
+ * تصميم مركزي، صغير، وسلس (Smooth & Minimalist)
  */
 export default function ValuesBlack() {
   const values = [
     {
-      title: "Reliability",
-      description: "Our work holds up - literally. From first cut to final weld, we deliver consistent quality you can count on.",
-      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688c8230f989439d2f70bef0_Icon_201-9.svg",
+      title: "L'Excellence",
+      description: "La rigueur et la qualité du service sont les piliers de notre vision pour répondre aux besoins de nos clients.",
+      icon: <Award className="w-5 h-5 text-[#C0A062]" />, 
     },
     {
-      title: "Efficiency",
-      description: "Our work holds up - literally. From first cut to final weld, we deliver consistent quality you can count on.",
-      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688c8230f2c798b4cb9c91ca_Icon_202-10.svg",
+      title: "Disponibilité",
+      description: "Nous assurons un suivi et une écoute continue pour optimiser vos processus RH و accompagner votre croissance.",
+      icon: <Headphones className="w-5 h-5 text-[#C0A062]" />,
     },
     {
       title: "Innovation",
-      description: "Our work holds up - literally. From first cut to final weld, we deliver consistent quality you can count on.",
-      icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688c8231996be56e023de561_Icon_203-11.svg",
+      description: "Nous développون de nouvelles méthodes de management pour offrir des prestations créatives et performantes.",
+      icon: <Lightbulb className="w-5 h-5 text-[#C0A062]" />,
     },
   ];
 
   return (
-      <section className="bg-[#1A1A1A] py-16 sm:py-24 lg:py-32 relative overflow-hidden">
-        {/* Background Graphic - Large Alpha-styled Logo/Symbol */}
-        <div className="absolute top-[180px] right-[10%] opacity-100 z-0 hidden sm:block">
-          <svg 
-            width="320" 
-            height="160" 
-            viewBox="0 0 320 160" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path 
-              d="M50 0H180L130 50H260L210 100H320V160H140L190 110H60L110 60H0V0H50Z" 
-              stroke="#FDF580" 
-              strokeWidth="2"
-            />
-          </svg>
+    <section className="bg-[#0a0a0a] py-20 lg:py-28 relative overflow-hidden font-sans">
+      
+      {/* Background Graphic - More Subtle */}
+      <div className="absolute top-[10%] right-[5%] opacity-20 z-0 hidden lg:block">
+        <svg width="280" height="140" viewBox="0 0 320 160" fill="none" className="rotate-12">
+          <path 
+            d="M50 0H180L130 50H260L210 100H320V160H140L190 110H60L110 60H0V0H50Z" 
+            stroke="#C0A062" 
+            strokeWidth="0.5"
+          />
+        </svg>
+      </div>
+
+      <div className="container mx-auto max-w-[1140px] px-6 relative z-10">
+        
+        {/* 1. Centered Header (Compact) */}
+        <div className="flex flex-col items-center text-center mb-16 lg:mb-24">
+          <div className="mb-4 flex items-center gap-2 px-3 py-1 rounded-full border border-white/5 bg-white/5 backdrop-blur-sm">
+            <div className="w-1 h-1 rounded-full bg-[#800020] animate-pulse" />
+            <span className="text-[9px] font-bold tracking-[0.3em] text-gray-400 uppercase">
+              Nos Valeurs
+            </span>
+          </div>
+          
+          <h2 className="text-white text-[28px] sm:text-[38px] lg:text-[46px] font-black leading-tight tracking-tighter uppercase italic mb-6">
+            Votre confort est <span className="text-[#C0A062] not-italic">notre responsabilité</span>
+          </h2>
+          
+          <p className="max-w-[600px] text-gray-400 text-[14px] sm:text-[16px] leading-relaxed font-light opacity-80">
+            Nous nous engageons à offrir une expertise du métier, une excellence et une innovation continue — les piliers fondateurs de <span className="text-white font-medium">Nouest Management</span>.
+          </p>
         </div>
 
-        <div className="container mx-auto max-w-[1280px] px-4 sm:px-8 relative z-10">
-          {/* Header Content */}
-          <div className="max-w-[850px] mb-12 sm:mb-20 lg:mb-[100px]">
-            <div className="flex items-center gap-3 mb-6 sm:mb-8">
-              <div className="w-[10px] h-[10px] bg-[#FDF580] rotate-45"></div>
-              <span className="text-[#FDF580] uppercase tracking-widest text-[14px] font-semibold">
-                Our values
-              </span>
-            </div>
-
-            <h2 className="text-[#666666] leading-[1.2] mb-6 font-medium text-[24px] xs:text-[28px] sm:text-[32px] md:text-[clamp(32px,5vw,56px)]">
-              We are committed to crafting
-              <span className="text-[#FFFFFF]"> reliable, efficient, and innovative metal solutions</span>
-              {' '}- standards of precision and quality.
-            </h2>
-          </div>
-
-          {/* Values Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[60px] gap-y-12 sm:gap-y-16">
-            {values.map((value, index) => (
-              <div key={index} className="flex flex-col">
-                {/* Icon Container */}
-                <div className="mb-8 sm:mb-10 w-12 h-12 flex items-center justify-center rounded-full bg-[#1F1F1F] border border-[#2A2A2A]">
-                  <Image 
-                    src={value.icon} 
-                    alt={value.title} 
-                    width={24} 
-                    height={24} 
-                    className="filter brightness-0 invert sepia(1) saturate(5) hue-rotate(10deg)"
-                  />
-                </div>
-
-                {/* Title */}
-                <h3 className="text-[#FDF580] mb-4 sm:mb-6 text-[24px] sm:text-[32px] font-medium leading-[1.3]">
-                  {value.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-[#CCCCCC] text-[16px] sm:text-[18px] leading-[1.6] max-w-[340px]">
-                  {value.description}
-                </p>
+        {/* 2. Values Grid - Small & Refined Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {values.map((value, index) => (
+            <div key={index} className="group flex flex-col items-start p-6 rounded-[24px] bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-[#C0A062]/20 transition-all duration-500">
+              
+              {/* Icon - Smaller & Sleek */}
+              <div className="mb-6 w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:scale-110 group-hover:bg-[#800020]/20 transition-all duration-500">
+                {value.icon}
               </div>
-            ))}
-          </div>
+
+              {/* Title - Bordeaux */}
+              <h3 className="text-[#800020] mb-3 text-[20px] lg:text-[22px] font-black uppercase tracking-tight group-hover:tracking-wider transition-all">
+                {value.title}
+              </h3>
+
+              {/* Description - Compact & Readable */}
+              <p className="text-gray-400 text-[13px] lg:text-[14px] leading-relaxed font-light mb-6">
+                {value.description}
+              </p>
+
+              {/* Minimal Link Decor */}
+              <div className="mt-auto flex items-center gap-2 text-[10px] font-bold text-[#C0A062] uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">
+                <span>Détail</span>
+                <ChevronRight size={12} />
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
+
+        {/* Background Ambient Glow */}
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-[#800020]/10 rounded-full blur-[100px] pointer-events-none" />
+      </div>
+    </section>
   );
 }

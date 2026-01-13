@@ -29,76 +29,68 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    {
-      name: "Demos",
-      type: "dropdown",
-      links: [
-        { label: "Home 1", href: "#" },
-        { label: "Home 2", href: "#" },
-        { label: "Home 3", href: "#" },
-      ],
-    },
-    {
-      name: "Company",
-      type: "dropdown",
-      links: [
-        { label: "About Us", href: "#" },
-        { label: "History", href: "#" },
-        { label: "Work Process", href: "#" },
-        { label: "Why Choose Us", href: "#" },
-        { label: "Career", href: "#" },
-        { label: "Clients", href: "#" },
-      ],
-    },
-    { name: "Services", type: "link", href: "#" },
-    { name: "Pricing", type: "link", href: "#" },
-    { name: "Projects", type: "link", href: "#" },
-    {
-      name: "All Pages",
-      type: "dropdown",
-      isMega: true,
-      columns: [
-        {
-          links: [
-            { label: "Home 1", href: "#" },
-            { label: "Home 2", href: "#" },
-            { label: "Home 3", href: "#" },
-            { label: "About Us", href: "#" },
-            { label: "History", href: "#" },
-          ],
-        },
-        {
-          links: [
-            { label: "Team", href: "#" },
-            { label: "Pricing", href: "#" },
-            { label: "Projects", href: "#" },
-            { label: "Clients", href: "#" },
-            { label: "Services", href: "#" },
-          ],
-        },
-        {
-          links: [
-            { label: "Career", href: "#" },
-            { label: "Contact us", href: "#" },
-            { label: "Testimonials", href: "#" },
-            { label: "Blog", href: "#" },
-            { label: "FAQ's", href: "#" },
-          ],
-        },
-      ],
-    },
+    // {
+    //   name: "Company",
+    //   type: "dropdown",
+    //   links: [
+    //     { label: "About Us", href: "#" },
+    //     { label: "History", href: "#" },
+    //     { label: "Work Process", href: "#" },
+    //     { label: "Why Choose Us", href: "#" },
+    //     { label: "Career", href: "#" },
+    //     { label: "Clients", href: "#" },
+    //   ],
+    // },
+    { name: "Accueil", type: "link", href: "#" },
+    { name: "Nos Services", type: "link", href: "#" },
+    { name: "Qui Sommes nous ?", type: "link", href: "#" },
+    { name: "Nos valeurs", type: "link", href: "#" },
+    // {
+    //   name: "All Pages",
+    //   type: "dropdown",
+    //   isMega: true,
+    //   columns: [
+    //     {
+    //       links: [
+    //         { label: "Home 1", href: "#" },
+    //         { label: "Home 2", href: "#" },
+    //         { label: "Home 3", href: "#" },
+    //         { label: "About Us", href: "#" },
+    //         { label: "History", href: "#" },
+    //       ],
+    //     },
+    //     {
+    //       links: [
+    //         { label: "Team", href: "#" },
+    //         { label: "Pricing", href: "#" },
+    //         { label: "Projects", href: "#" },
+    //         { label: "Clients", href: "#" },
+    //         { label: "Services", href: "#" },
+    //       ],
+    //     },
+    //     {
+    //       links: [
+    //         { label: "Career", href: "#" },
+    //         { label: "Contact us", href: "#" },
+    //         { label: "Testimonials", href: "#" },
+    //         { label: "Blog", href: "#" },
+    //         { label: "FAQ's", href: "#" },
+    //       ],
+    //     },
+    //   ],
+    // },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[1000] flex justify-center p-[10px_20px_0]">
-      <div className="w-full max-w-[1300px] bg-background rounded-b-[10px] flex items-center justify-between px-5 md:px-10 h-[98px] shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-[1000] flex justify-center p-[10px_20px_0] dark:bg-[#030303] ">
+      <div className="w-full max-w-[1300px] bg-background rounded-b-[10px] flex items-center justify-between px-5 md:px-10 h-[98px] shadow-sm dark:border border-white">
         {/* Logo */}
-        <a href="/" className="relative block w-[126px] h-[30px] shrink-0">
+        <a href="/" className="relative block w-[126px] h-[100px] shrink-0">
           <Image
-            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688b757065f51cfc4af0299a_Logo_20Dark_20Ironis-1.svg"
+            src="/logo.png"
             alt="Ironis Logo"
             fill
-            className="object-contain dark:invert"
+            className="object-contain"
             priority
           />
         </a>
@@ -172,7 +164,7 @@ const Navbar = () => {
             href="/contact-us"
             className="group relative flex items-center justify-center gap-2 bg-primary hover:bg-foreground text-primary-foreground hover:text-background px-8 h-[58px] rounded-full text-[16px] font-semibold transition-all duration-300"
           >
-            Let’s work together
+            Contactez-nous
             <div className="relative w-5 h-5 flex items-center justify-center overflow-hidden">
                <ArrowUpRight className="w-5 h-5 absolute transition-all duration-300 group-hover:-translate-y-5 group-hover:translate-x-5" />
                <ArrowUpRight className="w-5 h-5 absolute -translate-x-5 translate-y-5 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
@@ -243,7 +235,7 @@ const Navbar = () => {
           </div>
 
           <div className="mt-auto pt-8 flex flex-col gap-4">
-            <span className="text-center text-[14px] text-muted-foreground uppercase tracking-widest">Interested?</span>
+            <span className="text-center text-[14px] text-muted-foreground uppercase tracking-widest">Besoin d'un devis ?</span>
             <a
               href="/contact-us"
               onClick={() => setIsMobileMenuOpen(false)}

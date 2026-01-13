@@ -1,74 +1,105 @@
 import React from 'react';
-import Image from 'next/image';
+import { Building2, UserRoundCog, Leaf, Sparkles, ArrowRight } from 'lucide-react';
 
 const services = [
   {
-    title: "01 – EXTERNALISATION DES SERVICES",
-    description: "• Prestation de gestion de syndic et activités connexes\n• Externalisation des services de restauration\n• Externalisation des services hôteliers",
-    icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688c889a710928913b7cae61_Service_20Icon_201-1.svg",
-    href: "#",
-    image: "https://images.unsplash.com/photo-1454165833767-02a698d48767?auto=format&fit=crop&q=80&w=800"
+    id: "01",
+    title: "EXTERNALISATION",
+    description: ["Gestion de syndic", "Restauration", "Services hôteliers"],
+    Icon: Building2,
   },
   {
-    title: "02 – FOURNITURE DE PERSONNEL INTÉRIMAIRE",
-    description: "• Main-d’œuvre\n• Main-d’œuvre qualifiée\n• Techniciens\n• Techniciens spécialisés\n• Cadres",
-    icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688c88b0f48f65917a152636_Service_20Icon_202-3.svg",
-    href: "#",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c29596dd?auto=format&fit=crop&q=80&w=800"
+    id: "02",
+    title: "INTÉRIM & RH",
+    description: ["Main-d’œuvre qualifiée", "Techniciens spécialisés", "Cadres & Ingénieurs"],
+    Icon: UserRoundCog,
   },
   {
-    title: "03 – JARDINAGE",
-    description: "• Jardinage administratif\n• Jardinage des jardins publics\n• Jardinage des résidences\n• Entretien des espaces et lieux publics",
-    icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688c88b9fa8c1caa83be789b_Subtitle_20icon_20Black-7.svg",
-    href: "#",
-    image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800"
+    id: "03",
+    title: "JARDINAGE",
+    description: ["Entretien jardins publics", "Résidences & Villas", "Espaces verts"],
+    Icon: Leaf,
   },
   {
-    title: "04 – NETTOYAGE",
-    description: "• Nettoyage de bureaux et administrations\n• Nettoyage de locaux industriels\n• Nettoyage d’immeubles\n• Nettoyage de résidences\n• Nettoyage d’hôtels\n• Nettoyage de restaurants\n• Nettoyage de locaux\n• Hygiène 3D",
-    icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/c8097953-7986-41c8-954c-071588461203-ironis-wcopilot-webflow-io/assets/svgs/688c889a710928913b7cae61_Service_20Icon_201-1.svg",
-    href: "#",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6958?auto=format&fit=crop&q=80&w=800"
-  }
+    id: "04",
+    title: "NETTOYAGE",
+    description: ["Bureaux & Immeubles", "Locaux industriels", "Hygiène 3D"],
+    Icon: Sparkles,
+  },
 ];
 
 const ServiceCards = () => {
   return (
-    <section className="bg-muted py-12 sm:py-20">
-      <div className="container mx-auto px-4 sm:px-8 max-w-[1280px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+    <section className="relative bg-white py-24 overflow-hidden dark:bg-[#030303]">
+      
+      <div className="container mx-auto px-6 max-w-[1300px]">
+        
+        {/* 1. Remark Header (Nos Services) */}
+        <div className="flex flex-col items-center mb-16 text-center">
+          <div className="mb-4 flex items-center gap-3 px-5 py-2 rounded-full border border-[#800020]/20 bg-[#800020]/5 shadow-sm">
+            <span className="flex h-2 w-2 rounded-full bg-[#800020] animate-pulse" />
+            <span className="text-[11px] font-black tracking-[0.3em] text-[#800020] uppercase">
+              Nos Services
+            </span>
+          </div>
+          <h2 className="text-[#1a1a1a] dark:text-white text-3xl sm:text-5xl font-black tracking-tighter uppercase italic">
+            Solutions <span className="text-[#C0A062] not-italic">Expertises</span>
+          </h2>
+        </div>
+
+        {/* 2. Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-[20px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col group">
-              <div className="relative h-[240px] w-full overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+            <div 
+              key={index} 
+              className="group relative p-8 flex flex-col bg-white dark:bg-[#0A0A0A] border-2 border-gray-100 rounded-[24px] transition-all duration-500 hover:border-[#C0A062] hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:-translate-y-2"
+            >
+              {/* Bold Visible Number */}
+              <div className="absolute top-6 right-8 text-[60px] font-black leading-none text-gray-200/80 dark:text-white group-hover:text-[#C0A062]/20 transition-colors duration-500 select-none italic tracking-tighter">
+                {service.id}
               </div>
-                <div className="p-6 sm:p-8 flex flex-col flex-grow">
-                  <div className="w-12 h-12 mb-6">
-                    <Image src={service.icon} alt={service.title} width={48} height={48} className="w-full h-full object-contain dark:invert" />
+
+              {/* Icon Container (Bordeaux) */}
+              <div className="relative w-14 h-14 rounded-2xl bg-[#800020] flex items-center justify-center mb-8 shadow-lg shadow-[#800020]/20 group-hover:rotate-[10deg] transition-transform duration-500">
+                <service.Icon className="w-7 h-7 text-white" strokeWidth={1.5} />
+              </div>
+
+              {/* Title & Accent */}
+              <div className="relative mb-6">
+                <h3 className="text-[#1a1a1a] text-[19px] font-black tracking-tight group-hover:text-[#800020] transition-colors uppercase dark:text-white">
+                  {service.title}
+                </h3>
+                <div className="w-10 h-[3px] bg-[#C0A062] mt-2 rounded-full group-hover:w-full transition-all duration-700" />
+              </div>
+              
+              {/* Description List */}
+              <div className="relative space-y-3 mb-12 flex-grow">
+                {service.description.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#800020]" />
+                    <p className="text-gray-600 text-[14px] font-semibold leading-snug">{item}</p>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-[#1a1a1a] dark:text-white">{service.title}</h3>
-                  <p className="text-[#666666] dark:text-gray-400 text-sm sm:base leading-relaxed mb-8 flex-grow whitespace-pre-line">
-                    {service.description}
-                  </p>
-                <a 
-                  href={service.href} 
-                  className="inline-flex items-center text-[#1a1a1a] font-semibold hover:text-[#666666] transition-colors mt-auto"
-                >
-                  En savoir plus
-                  <svg className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
+                ))}
               </div>
+
+              {/* Action Link */}
+              <a 
+                href="#" 
+                className="relative inline-flex items-center gap-3 text-[12px] font-black text-[#1a1a1a] uppercase tracking-widest transition-all group-hover:gap-5"
+              >
+                <span className="border-b-2 border-black/10 group-hover:border-[#800020] dark:text-white">En savoir plus</span>
+                <ArrowRight className="w-4 h-4 text-[#C0A062]" />
+              </a>
+
             </div>
           ))}
         </div>
+
+      </div>
+
+      {/* Decorative Branding Text */}
+      <div className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 text-[120px] font-black text-gray-300/40 whitespace-nowrap pointer-events-none select-none z-0 tracking-tighter italic">
+        MANAGEMENT
       </div>
     </section>
   );
